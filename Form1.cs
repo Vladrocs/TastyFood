@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -14,6 +15,8 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        public string linkpoza;
+        
         public Form1()
         {
             InitializeComponent();
@@ -49,7 +52,7 @@ namespace WinFormsApp1
 
             // Console.WriteLine($"Type: {responseObject._type}");
             Debug.WriteLine(getBetween(responseMessage, "class=\"form-control\" value=\"", "\""));
-            string linkpoza = getBetween(responseMessage, "class=\"form-control\" value=\"", "\"");
+            linkpoza = getBetween(responseMessage, "class=\"form-control\" value=\"", "\"");
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.Load(linkpoza);
 
@@ -67,7 +70,9 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            linkpoza = linkpoza.Substring(linkpoza.LastIndexOf("/"));
+            pictureBox1.Image.Save(@"C:\Users\Vlad\Desktop\Photos\"+linkpoza, ImageFormat.Jpeg);
+            //"C:\Users\Vlad\Desktop\America\pic.jpg"
         }
     }
 }

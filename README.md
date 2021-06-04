@@ -6,6 +6,6 @@ The app make requests to the API for food photos and offers options to load food
 
 Foodish API can be found here : https://foodish-api.herokuapp.com/
 
-![alt text](http://url/to/img1.png)
-![alt text](http://url/to/img2.png)
-![alt text](http://url/to/img3.png)
+![alt text](http://url/to/img1.PNG)
+![alt text](http://url/to/img2.PNG)
+![alt text](http://url/to/img3.PNG)

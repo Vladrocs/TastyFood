@@ -41,7 +41,7 @@ namespace WinFormsApp1
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 37);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Genereaza Mancare";
+            this.button1.Text = "Generate Food Photos";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -60,7 +60,7 @@ namespace WinFormsApp1
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 37);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Salveaza";
+            this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

@@ -70,9 +70,28 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            linkpoza = linkpoza.Substring(linkpoza.LastIndexOf("/"));
-            pictureBox1.Image.Save(@"C:\Users\Vlad\Desktop\Photos\"+linkpoza, ImageFormat.Jpeg);
+            //linkpoza = linkpoza.Substring(linkpoza.LastIndexOf("/"));
+            //pictureBox1.Image.Save(@"C:\Users\Vlad\Desktop\Photos\"+linkpoza, ImageFormat.Jpeg);
             //"C:\Users\Vlad\Desktop\America\pic.jpg"
+            // save dialog
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+            ImageFormat format = ImageFormat.Png;
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string ext = System.IO.Path.GetExtension(sfd.FileName);
+                switch (ext)
+                {
+                    case ".jpg":
+                        format = ImageFormat.Jpeg;
+                        break;
+                    case ".bmp":
+                        format = ImageFormat.Bmp;
+                        break;
+                }
+                pictureBox1.Image.Save(sfd.FileName, format);
+            }
         }
     }
 }
